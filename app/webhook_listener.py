@@ -44,3 +44,7 @@ def handle_webhook():
             return jsonify({"error": response.text}), 400
 
     return jsonify({"message": "Ignored event"}), 200
+
+@webhook.route("/", methods=["GET"])
+def index():
+    return "✅ Flask app is running behind NGINX and Gunicorn!"
